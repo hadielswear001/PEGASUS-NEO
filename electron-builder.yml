@@ -1,0 +1,24 @@
+appId: com.pegasus.neo.desktop
+productName: PEGASUS NEO
+artifactName: PEGASUS-NEO-${version}-${arch}.${ext}
+directories:
+  output: release
+files:
+  - package.json
+  - dist-client/**/*
+  - dist-server/**/*
+  - dist-electron/**/*
+  - node_modules/**/*
+  - "!node_modules/**/better-sqlite3/build/Release/test_extension.node"
+asar: true
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dir
+      arch:
+        - universal
+  icon: electron/icon.icns
+  hardenedRuntime: false
+  gatekeeperAssess: false
+npmRebuild: true
+buildDependenciesFromSource: false
